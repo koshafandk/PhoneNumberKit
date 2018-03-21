@@ -8,12 +8,13 @@
 
 import Foundation
 
-final class MetadataManager {
-    var territories = [MetadataTerritory]()
-    var territoriesByCode = [UInt64: [MetadataTerritory]]()
-    var mainTerritoryByCode = [UInt64: MetadataTerritory]()
-    var territoriesByCountry = [String: MetadataTerritory]()
-
+public final class MetadataManager {
+    
+    public var territories = [MetadataTerritory]()
+    public var territoriesByCode = [UInt64: [MetadataTerritory]]()
+    public var mainTerritoryByCode = [UInt64: MetadataTerritory]()
+    public var territoriesByCountry = [String: MetadataTerritory]()
+    
     // MARK: Lifecycle
 
     /// Private init populates metadata territories and the two hashed dictionaries for faster lookup.

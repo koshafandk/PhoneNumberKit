@@ -13,9 +13,9 @@ import CoreTelephony
 
 public typealias MetadataCallback = (() throws -> Data?)
 
-public final class PhoneNumberKit: NSObject {
+public class PhoneNumberKit: NSObject {
     // Manager objects
-    let metadataManager: MetadataManager
+    public let metadataManager: MetadataManager
     let parseManager: ParseManager
     let regexManager = RegexManager()
 
