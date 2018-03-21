@@ -32,20 +32,20 @@ MetadataTerritory object
 - Parameter uan: MetadataPhoneNumberDesc for uan numbers
 - Parameter leadingDigits: Optional leading digits for the territory
 */
-struct MetadataTerritory {
-    let codeID: String
-    let countryCode: UInt64
-    let internationalPrefix: String?
-    let mainCountryForCode: Bool
-    let nationalPrefix: String?
-    let nationalPrefixFormattingRule: String?
-    let nationalPrefixForParsing: String?
-    let nationalPrefixTransformRule: String?
-    let preferredExtnPrefix: String?
+public struct MetadataTerritory {
+    public let codeID: String
+    public let countryCode: UInt64
+    public let internationalPrefix: String?
+    public let mainCountryForCode: Bool
+    public let nationalPrefix: String?
+    public let nationalPrefixFormattingRule: String?
+    public let nationalPrefixForParsing: String?
+    public let nationalPrefixTransformRule: String?
+    public let preferredExtnPrefix: String?
     let emergency: MetadataPhoneNumberDesc?
     let fixedLine: MetadataPhoneNumberDesc?
     let generalDesc: MetadataPhoneNumberDesc?
-    let mobile: MetadataPhoneNumberDesc?
+    public let mobile: MetadataPhoneNumberDesc?
     let pager: MetadataPhoneNumberDesc?
     let personalNumber: MetadataPhoneNumberDesc?
     let premiumRate: MetadataPhoneNumberDesc?
@@ -55,7 +55,7 @@ struct MetadataTerritory {
     let voip: MetadataPhoneNumberDesc?
     let uan: MetadataPhoneNumberDesc?
     let numberFormats: [MetadataPhoneNumberFormat]
-    let leadingDigits: String?
+    public let leadingDigits: String?
 
 }
 
@@ -126,10 +126,11 @@ MetadataPhoneNumberDesc object
 - Parameter nationalNumberPattern:  National number regex pattern. Optional.
 - Parameter possibleNumberPattern:  Possible number regex pattern. Optional.
 */
-struct MetadataPhoneNumberDesc {
+public struct MetadataPhoneNumberDesc {
     let exampleNumber: String?
     let nationalNumberPattern: String?
     let possibleNumberPattern: String?
+    public let possibleLengths: [String: String]?
 }
 
 extension MetadataPhoneNumberDesc {
@@ -141,6 +142,7 @@ extension MetadataPhoneNumberDesc {
         self.nationalNumberPattern = jsondDict?.value(forKey: "nationalNumberPattern") as? String
         self.possibleNumberPattern = jsondDict?.value(forKey: "possibleNumberPattern") as? String
         self.exampleNumber = jsondDict?.value(forKey: "exampleNumber") as? String
+        self.possibleLengths = jsondDict?.value(forKey: "possibleLengths") as? [String: String]
         
     }
 }
@@ -156,7 +158,7 @@ extension MetadataPhoneNumberDesc {
  - Parameter nationalPrefixOptionalWhenFormatting: National prefix optional bool. Optional.
  - Parameter domesticCarrierCodeFormattingRule: Domestic carrier code formatting rule. Optional.
  */
-struct MetadataPhoneNumberFormat {
+public struct MetadataPhoneNumberFormat {
     let pattern: String?
     let format: String?
     let intlFormat: String?
