@@ -20,9 +20,7 @@ public class PhoneNumberKitManager {
     public static let shared = PhoneNumberKitManager()
     public let countries: [Country]
     public var defaultCountry: Country?
-    
-    // MARK: - Private variables
-    let phoneNumberKit = PhoneNumberKit()
+    public let phoneNumberKit = PhoneNumberKit()
     
     // MARK: - Life cycle
     private init() {
