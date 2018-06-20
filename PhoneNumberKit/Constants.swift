@@ -94,7 +94,7 @@ public enum PhoneNumberType {
 
 // MARK: Constants
 
-struct PhoneNumberConstants {
+public struct PhoneNumberConstants {
   static let defaultCountry = "US"
   static let defaultExtnPrefix = " ext. "
   static let longPhoneNumber = "999999999999999"
