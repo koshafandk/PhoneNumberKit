@@ -51,7 +51,7 @@ public final class PartialFormatter {
 
     var defaultMetadata: MetadataTerritory?
     var currentMetadata: MetadataTerritory?
-    var prefixBeforeNationalNumber = String()
+    public var prefixBeforeNationalNumber = String()
     var shouldAddSpaceAfterNationalPrefix = false
     public var withPrefix = true
 
